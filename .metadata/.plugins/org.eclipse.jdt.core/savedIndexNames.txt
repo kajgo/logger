@@ -1,0 +1,3 @@
+INDEX VERSION 1.126+/home/kajsa/workspaces/logger/.metadata/.plugins/org.eclipse.jdt.core
+3573573459.index
+1274216971.index
