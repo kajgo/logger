@@ -1,9 +1,0 @@
-!SESSION 2013-03-29 19:53:15.911 -----------------------------------------------
-eclipse.buildId=M20120208-0800
-java.version=1.6.0_26
-java.vendor=Sun Microsystems Inc.
-BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
-Command-line arguments:  -os linux -ws gtk -arch x86_64
-
-!ENTRY com.android.ide.eclipse.adt 4 0 2013-03-29 19:55:51.267
-!MESSAGE Failed to load properties file for project 'Logger'
