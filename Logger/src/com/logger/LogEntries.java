@@ -4,11 +4,14 @@ import java.util.*;
 
 public class LogEntries {
 
+	List<LogEntry> logs = new ArrayList<LogEntry>();
+	
 	public List<LogEntry> getAll() {
-		List<LogEntry> logs = new ArrayList<LogEntry>();
-		logs.add(new LogEntry("second entry"));
-		logs.add(new LogEntry("first entry"));
 		return logs;
+	}
+
+	public void add(LogEntry logEntry) {
+		logs.add(0, logEntry);
 	}
 
 }

@@ -5,9 +5,11 @@ import java.util.Date;
 public class LogEntry {
 
 	private String text;
+	private Date date;
 	
-	public LogEntry(String text) {
+	public LogEntry(String text, Date date) {
 		this.text = text;
+		this.date = date;
 	}
 	
 	public String getText() {
@@ -15,7 +17,7 @@ public class LogEntry {
 	}
 
 	public Date getDate() {
-		return new Date(666);
+		return date;
 	}
 
 }
