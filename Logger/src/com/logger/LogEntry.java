@@ -1,5 +1,7 @@
 package com.logger;
 
+import java.util.Date;
+
 public class LogEntry {
 
 	private String text;
@@ -10,6 +12,10 @@ public class LogEntry {
 	
 	public String getText() {
 		return text;
+	}
+
+	public Date getDate() {
+		return new Date(666);
 	}
 
 }
