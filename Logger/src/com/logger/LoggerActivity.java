@@ -1,5 +1,6 @@
 package com.logger;
 
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -13,15 +14,22 @@ import android.widget.*;
 
 public class LoggerActivity extends Activity {
 	
-    private LogEntries log = new LogEntries();
+    private LogEntries log = new LogEntries(new Clock() {
+		
+		public Date getCurrentTime() {
+			Calendar cal = Calendar.getInstance();
+			Date now = cal.getTime();
+			return now;
+		}
+	});
         
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         
-        log.add(new LogEntry("first entry", new Date(100)));
-        log.add(new LogEntry("seond entry", new Date(200)));
+        log.add("first entry");
+        log.add("seond entry");
         
         ListView logEntryList = (ListView)findViewById(R.id.logEntryList);
         logEntryList.setAdapter(new LogEntryAdapter(getApplicationContext(), log.getAll()));
@@ -29,7 +37,7 @@ public class LoggerActivity extends Activity {
     
     public void logButtonClicked(View view) {
         EditText logMessage = (EditText)findViewById(R.id.logMessageText);
-        log.add(new LogEntry(logMessage.getText().toString(), new Date(100)));
+        log.add(logMessage.getText().toString());
         
         ListView logEntryList = (ListView)findViewById(R.id.logEntryList);
         logEntryList.setAdapter(new LogEntryAdapter(getApplicationContext(), log.getAll()));
