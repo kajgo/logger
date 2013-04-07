@@ -1,7 +1,5 @@
 package com.logger;
 
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 import android.app.Activity;
@@ -14,14 +12,7 @@ import android.widget.*;
 
 public class LoggerActivity extends Activity {
 	
-    private LogEntries log = new LogEntries(new Clock() {
-		
-		public Date getCurrentTime() {
-			Calendar cal = Calendar.getInstance();
-			Date now = cal.getTime();
-			return now;
-		}
-	});
+    private LogEntries log = new LogEntries(new SystemClock());
         
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -43,7 +34,7 @@ public class LoggerActivity extends Activity {
         logEntryList.setAdapter(new LogEntryAdapter(getApplicationContext(), log.getAll()));
     }
     
-    class LogEntryAdapter extends ArrayAdapter<LogEntry> {
+	class LogEntryAdapter extends ArrayAdapter<LogEntry> {
 
     	private Context context;
     	private List<LogEntry> objects;
