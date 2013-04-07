@@ -53,6 +53,8 @@ public class LoggerActivity extends Activity {
 	      
 	      TextView textView = (TextView) entryView.findViewById(R.id.text);
 	      textView.setText(this.objects.get(position).getText());
+	      TextView date = (TextView) entryView.findViewById(R.id.date);
+	      date.setText(this.objects.get(position).getDate().toString());
 	
 	      return entryView;
 	    }
